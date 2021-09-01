@@ -86,25 +86,42 @@
   </body>
 
   <script type="text/javascript">
+    /** C H A R G E M E N T **/
+    var proposition = []
+    var title = []
+    /* hugo*/
+    {{ range .Pages }}
+          proposition.push({{ .Content}})
+          title.push({{ .Title}})
+    {{ end }}
+    /* fin hugo*/
+    var proposition_backup=proposition.slice(0)
+    var title_backup=title.slice(0)
+
+    /** C H A R G E M E N T **/
     $('a#question_btn').click(function(){
+      /* Gestion de l'interface : fermeture de l'écran de départ + retrait du focus du btn */
       $(".alert-dismissible").slideUp(333, function(){
         $(".alert-dismissible").alert('close');
       });
       $("a#question_btn").blur();
-      $('a#question_btn').animate({'opacity': 0}, 100, function () {
-        $(this).html('Une autre question')
-      })
 
-      var proposition = []
-      var title = []
-      {{ range .Pages }}
-            proposition.push({{ .Content}})
-            title.push({{ .Title}})
-      {{ end }}
+      /* Tirage au sort : 
+          - choix aléatoire
+          - retrait des éléments tirés au sort
+          - rechargement si la liste des choix possibles est épuisée.
+      */
       var id = Math.floor(Math.random() * proposition.length)
       var new_proposition = proposition[id]
       var new_title = title[id]
+      proposition.splice(id,1)
+      title.splice(id,1)
+      if (proposition.length==0) {
+        proposition = proposition_backup.slice(0)
+        title = title_backup.slice(0)
+      }
 
+      /* Gestion de l'interface : changement du titre, de la question et du btn */
       $('#question_title').animate({'opacity': 0}, 333, function () {
         $(this).html(new_title);
       }).animate({'opacity': 1}, 1000);
@@ -113,7 +130,9 @@
         $(this).html(new_proposition);
       }).animate({'opacity': 1}, 1000);
 
-      $('a#question_btn').animate({'opacity': 1}, 5000)
+      $('a#question_btn').animate({'opacity': 0}, 333, function() {
+        $(this).html('Une autre question')
+      }).animate({'opacity': 1}, 3000)
     })
   </script>
 {{ end }}
