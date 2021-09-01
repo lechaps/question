@@ -90,7 +90,7 @@
       $(".alert-dismissible").slideUp(333, function(){
         $(".alert-dismissible").alert('close');
       });
-
+      $("a#question_btn").blur();
       $('a#question_btn').animate({'opacity': 0}, 100, function () {
         $(this).html('Je suis prêt pour une autre question')
       })
