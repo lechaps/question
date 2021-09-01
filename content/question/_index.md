@@ -5,7 +5,7 @@ title = "Bienvenue"
 
 > Quand ? Quoi ? Où ? Comment ? Qui ?
 
-Ce sont des interrogations existancielles qui permettent d'aider à définir précisément tout un tas d'évènements, de situations, de problèmes ou de sujets que la vie nous faire connaitre.
+Ce sont des interrogations existentielles qui permettent d'aider à définir précisément tout un tas d'évènements, de situations, de problèmes ou de sujets que la vie nous faire connaitre.
 
 ---
 

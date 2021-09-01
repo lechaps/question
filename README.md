@@ -1,3 +1,3 @@
 # Question
 
-Un petit jeu rapide sur des questions existancielles : question.lechaps.com
+Un petit jeu rapide sur des questions existentielles : question.lechaps.com
