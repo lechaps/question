@@ -100,11 +100,11 @@
 
     /** C H A R G E M E N T **/
     $('a#question_btn').click(function(){
-      /* Gestion de l'interface : fermeture de l'écran de départ + retrait du focus du btn */
+      /* Gestion de l'interface : fermeture de l'écran de départ */
       $(".alert-dismissible").slideUp(333, function(){
         $(".alert-dismissible").alert('close');
       });
-      $("a#question_btn").blur();
+
 
       /* Tirage au sort : 
           - choix aléatoire
