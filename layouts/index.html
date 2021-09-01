@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="fr" class="h-100">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="LeChaps">
+  {{ hugo.Generator }}
+  <title>10 minutes de questionnement</title>
+
+  <!-- Bootstrap core -->
+  <link href="./bootstrap-5.1.0-dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <script src="./bootstrap-5.1.0-dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+  <!-- JQuery -->
+  <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    /** Globals*/
+    /* Custom default button */
+    .btn-secondary,
+    .btn-secondary:focus {
+      color: #333333;
+      text-shadow: none;
+      /* Prevent inheritance from `body` */
+    }
+    .btn-secondary:hover
+    {
+      color: #646464;
+      text-shadow: #333333 0px 0 2px;
+    }
+    /** Base structure */
+    body {
+      text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+      box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+    }
+    .cover-container {
+      max-width: 42em;
+    }
+
+  </style>
+
+</head>
+{{ with .Site.GetPage "section" "question" }}
+  <body class="d-flex h-100 text-center text-white bg-dark">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="mb-auto">
+        <div><h1 class="float-md-start mb-0">{{ .Site.Title}}</h1></div>
+      </header>
+
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <h4 class="alert-heading">{{ .Title }}</h4>
+        <p>{{ .Content }}</p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      <main id="question" class="px-3">
+        <h2 id="question_title"></h2>
+        <p class="lead" id="question_lbl"></p>
+        <p class="lead">
+          <a id="question_btn" href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Je suis prêt pour une question</a>
+        </p>
+      </main>
+
+      <footer class="mt-auto text-white-50">
+        <p>Made by <a href="https://lechaps.com/" class="text-white">LeChaps</a>, by <a href="https://twitter.com/LeChaps" class="text-white">@lechaps</a>.</p>
+      </footer>
+    </div>
+
+  </body>
+
+  <script type="text/javascript">
+    $('a#question_btn').click(function(){
+      $(".alert-dismissible").slideUp(333, function(){
+        $(".alert-dismissible").alert('close');
+      });
+
+      $('a#question_btn').animate({'opacity': 0}, 100, function () {
+        $(this).html('Je suis prêt pour une autre question')
+      })
+
+      var proposition = []
+      var title = []
+      {{ range .Pages }}
+            proposition.push({{ .Content}})
+            title.push({{ .Title}})
+      {{ end }}
+      var id = Math.floor(Math.random() * proposition.length)
+      var new_proposition = proposition[id]
+      var new_title = title[id]
+
+      $('#question_title').animate({'opacity': 0}, 333, function () {
+        $(this).html(new_title);
+      }).animate({'opacity': 1}, 1000);
+
+      $('p#question_lbl').animate({'opacity': 0}, 333, function () {
+        $(this).html(new_proposition);
+      }).animate({'opacity': 1}, 1000);
+
+      $('a#question_btn').animate({'opacity': 1}, 5000)
+    })
+  </script>
+{{ end }}
+</html>
