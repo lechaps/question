@@ -74,12 +74,12 @@
         <h2 id="question_title"></h2>
         <p class="lead" id="question_lbl"></p>
         <p class="lead">
-          <a id="question_btn" href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Je suis prêt pour une question</a>
+          <a id="question_btn" href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Je suis prêt !</a>
         </p>
       </main>
 
       <footer class="mt-auto text-white-50">
-        <p>Made by <a href="https://lechaps.com/" class="text-white">LeChaps</a>, by <a href="https://twitter.com/LeChaps" class="text-white">@lechaps</a>.</p>
+        <p>Made by <a href="https://question.lechaps.com/" class="text-white">LeChaps</a>, by <a href="https://twitter.com/LeChaps" class="text-white">@lechaps</a>.</p>
       </footer>
     </div>
 
@@ -92,7 +92,7 @@
       });
       $("a#question_btn").blur();
       $('a#question_btn').animate({'opacity': 0}, 100, function () {
-        $(this).html('Je suis prêt pour une autre question')
+        $(this).html('Une autre question')
       })
 
       var proposition = []
