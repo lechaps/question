@@ -5,10 +5,8 @@ title = "Bienvenue"
 
 > Quand ? Quoi ? Où ? Comment ? Qui ?
 
-Ce sont des interrogations existentielles qui permettent d'aider à définir précisément tout un tas d'évènements, de situations, de problèmes ou de sujets que la vie nous faire connaitre.
+Êtes-vous capable de raconter avec précisions ?
 
----
+Le jeu consistera à répondre à des questions existancielles de la manière la plus précise possible : Quand ? Quoi ? Où ? Comment ? Qui ?
 
-Le jeu consistera à répondre du mieux possible à ces interrogations existancielles à travers les récits personnels que vous ferez à partir de courtes questions.
-
-Ainsi vous pouvez jouer à plusieurs, à tour de rôle, en comptant les points (1 point par interrogations existancielles satisfaites dans un récit) ou simplement tout seul en vous posant quelques instants.
+Ainsi vous pouvez jouer à plusieurs, à tour de rôle, en comptant les points (1 point mot interrogatif) ou simplement tout seul en vous posant quelques instants à l'endroit de votre choix ;-)

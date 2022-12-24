@@ -1,4 +1,4 @@
-baseURL = "https://10minutes.lechaps.com/"
+baseURL = "https://question.lechaps.com/"
 languageCode = "fr-FR"
 title = "10 minutes de questionnement"
 disableKinds= ['taxonomy']
